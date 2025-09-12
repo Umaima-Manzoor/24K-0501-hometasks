@@ -26,7 +26,7 @@ class Array {
                 }
                 delete[] arr;
                 arr = newArr;
-                delete[] newArr;
+               
             }
 
             else {
