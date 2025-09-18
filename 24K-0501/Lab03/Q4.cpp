@@ -10,7 +10,6 @@ class Node {
         Node* next;
 
         Node(int id, string customer, string ride): ID(id), CustomerName(customer), RideName(ride), next(NULL){}
-
 };
 
 class BookingSystem {
