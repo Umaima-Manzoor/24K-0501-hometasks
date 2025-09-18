@@ -80,10 +80,10 @@ class ShoppingCart {
                 cout << val << " added at position " << pos << endl;
         }
 
-        void search(string val) {
+        void search(string value) {
             Node* temp = head;
             while(temp != NULL) {
-                if (temp->name == val) {
+                if (temp->name == value) {
 
                     string val = '"' + temp->name  + '"' + " - $" + to_string(temp->price);
                     cout << val << " found in the linked list" << endl;
@@ -91,7 +91,7 @@ class ShoppingCart {
                 }
                 temp = temp->next;
             }
-            cout << val << " not found in the linked list" << endl;
+            cout << value << " not found in the linked list" << endl;
 
         }
 
