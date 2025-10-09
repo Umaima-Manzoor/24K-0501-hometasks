@@ -50,7 +50,7 @@ int main() {
     int solved[4][4] = {0};
 
     if (Warehouse(grid, 0, 0, 4,solved)) {
-        cout << "Path for the worker to the warehouse:" << endl;
+        cout << "Path for the robot:" << endl;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 cout << solved[i][j] << " ";
@@ -58,7 +58,7 @@ int main() {
             cout << endl;
         }
     } else {
-        cout << "No path found for the worker to the warehouse" << endl;
+        cout << "No path found for the robot" << endl;
     }
 
 
