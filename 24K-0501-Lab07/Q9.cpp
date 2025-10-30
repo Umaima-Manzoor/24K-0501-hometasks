@@ -1,27 +1,25 @@
 #include <iostream>
 using namespace std;
 
-
 int getMax(int arr[], int n) {
     int mx = arr[0];
     for (int i = 1; i < n; i++) {
-        if (arr[i] > mx){
-            mx = arr[i];}
-
+        if (arr[i] > mx) {
+            mx = arr[i];
+        }
     }
     return mx;
 }
-
 
 void countSort(int arr[], int n, int exp) {
     int* output = new int[n];
     int count[10] = {0};
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         count[(arr[i] / exp) % 10]++;
     }
 
-    for (int i = 1; i < 10; i++){
+    for (int i = 1; i < 10; i++) {
         count[i] += count[i - 1];
     }
 
@@ -31,7 +29,7 @@ void countSort(int arr[], int n, int exp) {
         count[digit]--;
     }
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         arr[i] = output[i];
     }
 
@@ -40,7 +38,7 @@ void countSort(int arr[], int n, int exp) {
 
 void radixSort(int arr[], int n) {
     int m = getMax(arr, n);
-    for (int exp = 1; m / exp > 0; exp *= 10){
+    for (int exp = 1; m / exp > 0; exp *= 10) {
         countSort(arr, n, exp);
     }
 }
@@ -52,14 +50,16 @@ int main() {
 
     int* arr = new int[n];
     cout << "Enter transaction amounts:" << endl;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
         cin >> arr[i];
+    }
 
     radixSort(arr, n);
     cout << endl;
     cout << "Sorted transaction amounts (ascending):" << endl;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
+    }
     cout << endl;
 
     delete[] arr;
