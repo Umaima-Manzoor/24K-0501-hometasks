@@ -17,12 +17,13 @@ public:
 
     void insert(int val) {
         Node* n = new Node(val);
-        if (head == NULL)
+        if (head == NULL) {
             head = n;
-        else {
+        } else {
             Node* temp = head;
-            while (temp->next != NULL)
+            while (temp->next != NULL) {
                 temp = temp->next;
+            }
             temp->next = n;
         }
     }
@@ -34,8 +35,9 @@ public:
     }
 
     Node* getTail(Node* cur) {
-        while (cur != NULL && cur->next != NULL)
+        while (cur != NULL && cur->next != NULL) {
             cur = cur->next;
+        }
         return cur;
     }
 
@@ -57,20 +59,23 @@ public:
     }
 
     void quickSortRec(Node* start, Node* end) {
-        if (start == NULL || start == end)
+        if (start == NULL || start == end) {
             return;
+        }
 
         Node* pivot = partition(start, end);
 
         if (pivot != start) {
             Node* temp = start;
-            while (temp->next != pivot)
+            while (temp->next != pivot) {
                 temp = temp->next;
+            }
             quickSortRec(start, temp);
         }
 
-        if (pivot->next != NULL)
+        if (pivot->next != NULL) {
             quickSortRec(pivot->next, end);
+        }
     }
 
     void quickSort() {
