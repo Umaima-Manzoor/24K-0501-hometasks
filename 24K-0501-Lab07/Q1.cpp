@@ -23,8 +23,8 @@ public:
             head = n;
         } else {
             Node* temp = head;
-            while (temp->next != NULL)
-                temp = temp->next;
+            while (temp->next != NULL){
+                temp = temp->next;}
             temp->next = n;
         }
         num++;
@@ -34,8 +34,8 @@ public:
         int mx = head->score;
         Node* temp = head;
         while (temp != NULL) {
-            if (temp->score > mx)
-                mx = temp->score;
+            if (temp->score > mx){
+                mx = temp->score;}
             temp = temp->next;
         }
         return mx;
@@ -53,8 +53,8 @@ public:
             temp = temp->next;
         }
 
-        for (int i = 1; i < 10; i++)
-            count[i] += count[i - 1];
+        for (int i = 1; i < 10; i++){
+            count[i] += count[i - 1];}
 
         Node** nodes = new Node*[num];
         temp = head;
@@ -88,8 +88,8 @@ public:
 
         int m = getMax();
 
-        for (int exp = 1; m / exp > 0; exp *= 10)
-            countSort(exp);
+        for (int exp = 1; m / exp > 0; exp *= 10){
+            countSort(exp);}
     }
 
     void display() {
